@@ -1,0 +1,341 @@
+/*Conteudo: perfil, barra opcoes, posts / favoritos*/
+#conteudo{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+}
+
+#perfil-section{
+    width: 100%;
+    height: 15vmax;
+    display: flex;
+    padding: 3rem;
+    gap: 1rem;
+    align-items: center;
+    
+}
+
+#perfil-section img{
+    width: 6.5vmax;
+    height: auto;
+    aspect-ratio: 1;
+}
+
+#infos{
+    font-size: 2vmax;
+    width: 50%;
+    color: black;
+}
+
+#criarPost{
+    padding: 1rem;
+    background: #1C285D;
+    border: none;
+    color: white;
+    width: 20vmax;
+    font-size: 2vmax;
+    cursor: pointer;
+    border-radius: 2rem;
+}
+
+#sair{
+    color: #C00606;
+    font-size: 2.5vmax;
+    margin-left: 2vmax;
+    text-decoration: none;
+    
+}
+
+/*Barra opcoes: Posts / Favoritos*/
+#opcoes{
+    width: 100%;
+    height: 7vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    cursor: pointer;
+}
+
+.opcao{
+    display: flex;
+    align-items: center; justify-content: center;
+    border: 0.1vmax solid black;
+    color: black;
+    font-size: 2vmax;
+    transition: background 0.3s linear;
+}
+
+.opcao:hover{
+    background: rgb(211, 211, 211);
+}
+
+
+/*Post*/
+#posts-section,#favorite-section{
+    height: auto;
+    width: 100%;
+    padding: 2vmax;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-flow: row;
+    gap: 2vmax;
+}
+
+#publiPerfil{
+    gap: .5vmax;
+
+}
+
+#publiPerfil div{
+    height: 100%;
+}
+
+/*Fim post - parte duplica dos arquivos de publicação
+Alteralções: Sem imagem nas próprias postagens do perfil
+animação correr para favoritos e correr para posts, mudando o estilo da página
+remover estrela de favorito em posts próprios
+*/
+#sections{
+    position: relative;
+}
+
+#favorite-section{
+    display: none;
+    position: absolute;
+    top: 0;
+    left:0;
+}
+
+#posts-section{
+    position: absolute;
+}
+
+#modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#modal textarea {
+    resize: none;
+    outline: none;
+    padding: 2.5%;
+    background: #B7C1ED;
+    font-size: 1.5vmax;
+    margin-bottom: 0.5vmax;
+}
+
+#caixaCriarPost {
+    background: #92A1E3;
+    width: 45vmax;
+    height: 65%;
+    display: grid;
+    grid-template-rows: 10% 70% 10%;
+    gap: 2%;
+    padding: 1.5rem;
+    border-radius: 1rem;
+}
+
+#corVoltar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#opcoesPostagem {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2vw;
+}
+
+.buttonOpcao,
+#submitButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 1vmax;
+}
+
+#submitButton { 
+    background:#ffffff;
+    border: 3px solid #71727a;
+    transition: 0.2s linear;
+}
+#submitButton:hover{scale: 1.05;background:#fff;}
+
+#voltar { font-size: 2vmax; color: white;font-family: "Nunito", sans-serif;}
+
+#voltar,
+#escolherCor {
+    background: none;
+    border: none;
+    width: 10%;
+    aspect-ratio: 1;
+    cursor: pointer;
+}
+
+#escolherCor {
+    background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/RGB_color_wheel_24.svg/2000px-RGB_color_wheel_24.svg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    position: relative;
+}
+
+#opcoesCores {
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    width: 10vmax;
+    height: 2vmax;
+    border: none;
+    display: none;
+    user-select: none;
+}
+
+#escolherCor:hover>#opcoesCores,
+#opcoesCores:hover {
+    display: block;
+}
+
+.cor {
+    background-image: url("https://icones.pro/wp-content/uploads/2021/04/icone-cercle-rempli-bleu.png");
+    background-position: 1vmax;
+    padding-left: 3vmax;
+    background-size: 20%;
+    background-repeat: no-repeat;
+    background-color: #95A1E3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.5vmax;
+    font-size: 1vmax;
+}
+
+#red { background-image: url("https://upload.wikimedia.org/wikipedia/commons/d/d7/Circulo_vermelho.png"); }
+
+#green { background-image: url("https://upload.wikimedia.org/wikipedia/commons/2/27/Circulo_verde.png"); }
+
+#black { background-image: url("https://imagepng.org/circulo-preto/circulo-preto/"); }
+
+.cor:hover { filter: brightness(0.8); }
+
+
+/*Modal decisão*/
+.modalOpcao{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.conteudo-modal{
+    height: 35%;
+    aspect-ratio: 2 / 1;
+    background: #324491;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2vmax;
+    padding: 2vmax;
+    border-radius: 2vmax;
+}
+
+.conteudo-modal p{
+    font-size: 1.5vmax;
+    text-align: center;
+}
+
+.buttons{
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+}
+
+.buttons button{
+    width: 10vmax;
+    padding: 1.3vmax;
+    background: #1C285D;
+    text-align: center;
+    border: none;
+    color: white;
+    border-radius: 2vmax;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 768px){
+    #posts-section,#favorite-section{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .conteudo-modal{
+        height: 25%;
+    }
+    .conteudo-modal p{
+        font-size: 2.2vmax
+    }
+
+    .buttons{
+        width: 72%;
+    }
+
+    .buttons button{
+        width: 49%;
+        font-size: 1.4vmax;
+    }
+
+    /*começar aqui*/
+
+    #caixaCriarPost{
+        width: 90%;
+        height: 50%;
+    }
+
+    #opcoesCores{
+        height: 6vmax;
+        width: 20vmax;
+    }
+
+    .cor{
+        height: 100%;
+        font-size: 1.8vmax;
+    }
+
+    .buttonOpcao, #submitButton{
+        font-size: 1.8vmax;
+        /*muito grande a letra, no meu pc ta estourando a letra*/
+    }
+
+    #modal textarea{
+        font-size: 2.2vmax;
+    }
+
+    #voltar{
+        font-size: 3vmax;
+    }
+
+
+    /*O "X" esta´bom? ou muito pequeno?*/
+    /*aumenta*/
+}

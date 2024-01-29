@@ -1,0 +1,87 @@
+#publicacoes{
+    height: auto;
+    width: 100%;
+    padding: 3rem;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-flow: row;
+    gap: 4vmax;
+}
+
+
+/*Area design modal denúncia*/
+
+#modal-denuncia{
+    background: rgb(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    height: 100%;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#content-modal{
+    height: 30vmax;
+    aspect-ratio: 1.5 / 1;
+    background: #324491;
+    border-radius: 2vmax;
+    padding: 2vmax;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2vmax;
+}
+
+#content-modal h1{
+    font-size:1.6vmax;
+    text-align: center;
+}
+
+#content-modal form{
+    display: flex;
+    flex-direction: column;
+    gap: 2vmax;
+    width: 90%;
+}
+
+#motivoDenuncia{
+    width: 100%;
+    resize: none;
+    outline: none;
+    padding: 1vmax;
+    background: #B7C1ED;
+    font-size: 1.5vmax;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.button{
+    padding: 1vmax;
+    width: 45%;
+    background: #1C285D;
+    color: white;
+    border: none;
+    display: flex;
+    justify-content: center;
+    font-size: 1.2vmax;
+    border-radius: 2vmax;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.button:hover{scale: 1.03;color:#1C285D;background-color: white;}
+
+@media screen and (max-width: 768px){
+    #publicacoes{
+        grid-template-columns: 1fr 1fr;
+    }
+}

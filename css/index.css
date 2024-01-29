@@ -1,0 +1,359 @@
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    animation: shows 1.5s linear;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background: white;
+    background-image: url(../images/imagemCursos.png);
+    background-size: cover;
+    display: flex;align-items: center;justify-content: center;
+    color: white;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    
+}  
+@keyframes shows{
+    0%{
+        opacity: 0;
+    }100%{
+        opacity: 1;
+    }
+}
+a{
+    color: #0593E2;
+    font-size: 1vmax;
+    
+}
+
+/*ÁREA ESQUECEU SENHA*/
+
+#modal-esqueceuSenha{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#sairModal{
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    cursor: pointer;
+}
+
+.alteraSenha{
+    position: absolute;
+    top:50vh;
+    left:50vw;
+    translate: -50% -50%;
+    width: 35vmax;
+    height: 35vh;
+    background-color: #1C285D;
+    z-index: 99;
+    display:flex; align-items: center;justify-content: center;flex-direction: column;
+    border-radius: 1vmax;
+    filter:drop-shadow(0 0 15px black);
+}
+.alteraSenha h2{text-align: center;}
+
+.inputModal{
+    background-color:#2C3B7C;
+    padding: 5%;
+    margin: 2.5%;
+    text-align: center;
+    position: relative;
+    display: flex;
+}
+
+.inputEnvia{
+    background-color:#0A133E;
+    width: 25%;height: 12.5%;
+    scale: 1.1;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    border: none;
+}
+
+.etapa{
+    width: 100%; height: 100%;
+    display:flex; align-items: center;justify-content: center;flex-direction: column;
+    text-align: center;
+}
+
+#div2,#div3{
+    display: none;
+}
+/*inputsenha nope*/
+/*FIM ESQUECEU SENHA*/
+
+
+/*ÁREA ERRO DE LOGIN*/
+.modalExiste{
+    position:absolute;
+    top:50vh;
+    left:50vw;
+    translate: -50% -50%;
+    width: 35vmax;
+    height: 35vh;
+    background-color: #324491;
+    z-index: 100;
+    border-radius: 1vmax;
+    display:none; align-items: center;justify-content: center;flex-direction: column;
+    filter:drop-shadow(0 0 15px black);
+}
+.modalExiste button{
+    background-color: #fff;
+    border: none;outline:none;
+    margin-top: 2.5%;
+    width: 15%; height: 10%;
+    color: black;cursor: pointer; transition: 0.5s;
+}
+
+/*FIM ERRO DE LOGIN*/
+
+
+.containForm{
+    width:80%;
+    height: 80%;
+    display: flex;align-items: center;justify-content: center;
+    box-shadow: 0px 0px 5px black;
+    user-select: none;
+    background: #1C285D;
+    overflow: hidden;
+}
+
+#forms-insanos{
+    height: 100%;
+    width: 50%;
+    position: relative;
+}
+
+.formEntrar, .formCad{
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;align-items: center;justify-content: center;
+    flex-direction: column;
+    gap:1.7rem;
+}
+
+.formEntrar h1, .formCad h1{font-size: 5vmax;}
+
+.divPassword,.divPasswordCad{
+    display: flex;
+    align-items: center;
+    width: 60%;
+    height: 9%;
+    background-color: #0C0B3F;
+    border-radius: 3px;
+    border: none;
+}
+
+.inputPassword{
+    width: 100%;
+    height: 100%;
+}
+
+.divPassword img, .divPasswordCad img{    
+    width: 9%;
+    aspect-ratio: 1;
+    margin-right: 2.5%;
+    cursor: pointer;
+}
+
+input,.box-select,.button{
+    border-radius: 3px;
+    border: none;
+    background: #0C0B3F;
+    color: white;
+    width: 60%;
+    height: 9%;
+    padding: 1%;
+    padding-left: 1rem;
+    letter-spacing: 0.5px;
+    font-size: 1vmax;
+}
+
+select{
+    background: #0C0B3F;
+    width: 100%;
+    height: 100%;
+    font-size: 1vmax;
+    border: none;
+}
+
+
+.box-select{color: gray; display: none;}
+
+select:defined{color: white;}
+
+input:focus,select:focus{outline: none;}
+
+.button{width: 30%; padding-left: 1%; color: white;cursor: pointer; transition: 0.5s;}
+
+.button:hover{scale: 1.03;color:#0C0B3F;background-color: white;}
+
+#button{display: flex;align-items: center;justify-content: center;}
+
+.esqueceuSenha{margin-right: 35%;}
+
+.logoForm{
+    height: 100%;
+    width: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    
+}
+
+.logoForm img{
+    width: 100%;height: auto;
+    filter:drop-shadow(2px 4px 6px black);
+}
+
+.semConta{
+    margin: 0% 12.5% 0% 12.5%;
+    font-size: 1vmax;
+}
+
+#rm{
+    display: none;
+}
+
+@keyframes transitar{
+    100%,0%{
+        left: 0;
+    }
+    50%{
+        left: 50%;
+    }
+    50.1%{
+        left: -50%;
+    }
+}
+
+#rm::-webkit-inner-spin-button{
+    appearance: none;
+}
+
+.formCad,.submit{
+    display: none;
+}
+
+#seta{
+    position: absolute;
+    top: 2vmax; left: 3vmax;
+    transform: rotate(-180deg);
+    height: 4vmax;
+    aspect-ratio: 1;
+    cursor: pointer;
+}
+
+#setaBaixo{
+    display: none;
+}
+
+@media screen and (max-width: 1030px){
+
+    .logoForm{
+        display: none;
+    }
+
+    #forms-insanos{
+        width: 100%;
+    }
+
+    input,select,.button{
+        font-size: 2.1vmax;
+    }
+    a,.semConta{
+        font-size: 1.75vmax;
+    }
+
+    input{
+        font-size: 1.7vmax;
+    }
+
+    @keyframes transitar{
+        100%,0%{
+            left: 0;
+        }
+        50%{
+            left: 100%;
+        }
+        50.1%,60%{
+            left: -100%;
+        }
+    }
+
+    .alteraSenha{
+        width: 80%;
+    }
+    .alteraSenha h3{
+        font-size: 2vmax;
+    }
+
+    .alteraSenha button{
+        width: 30%;
+        font-size: 1.5vmax;
+    }
+
+    .box-select{
+        position: relative;
+    }
+
+    #setaBaixo{
+        position: absolute;
+        width: 6%;
+        aspect-ratio: 1;
+        z-index: 10;
+        display: block;
+        top: 50%;
+        right: 0;
+        transform: translate(-50%,-50%);
+        filter: invert(1);
+    }
+
+    select{
+        font-size: 1.7vmax;
+        position: relative;
+        padding: 0.5rem;
+        width: 40vw;
+        height: 5vh;
+         /*removendo seta*/
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        text-indent: 1px;
+        top: 50%;
+        transform: translate(0,-50%);
+
+    }
+    .op{
+        font-size: 1.5vmax;
+        width: 50%;
+    }
+
+
+}

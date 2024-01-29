@@ -1,0 +1,67 @@
+/*Conteudo: perfil, barra opcoes, posts / favoritos*/
+#conteudo{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+}
+
+#perfil-section{
+    width: 100%;
+    height: 15vmax;
+    display: flex;
+    padding:0 0 0 5rem;
+    gap: 1rem;
+    align-items: center;
+}
+
+#perfil-section img{
+    width: 6.5vmax;
+    height: auto;
+    aspect-ratio: 1;
+}
+#infos{
+    font-size: 2vmax;
+    width: 50%;
+    color: black;
+}
+
+#opcoes{
+    width: 100%;
+    height: 7vh;
+    cursor: pointer;
+    display: flex;
+    background: rgb(211, 211, 211);
+    align-items: center; justify-content: center;
+    border: 0.1vmax solid black;
+    color: black;
+    font-size: 2vmax;
+}
+
+
+/*Post*/
+#posts-section{
+    height: auto;
+    width: 100%;
+    padding: 2vmax;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-flow: row;
+    gap: 2vmax;
+    position: relative;
+}
+
+#publiPerfil div{
+    height: 100%;
+}
+
+
+@media screen and (max-width: 768px){
+    #posts-section{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+

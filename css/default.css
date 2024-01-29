@@ -1,0 +1,486 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background: white;
+    background-size: cover;
+    color: white;
+    position: relative;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    overflow-x: hidden;
+    user-select: none;
+}  
+
+
+header{
+    background: #1C285D;
+    height: 10vmax;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem 1rem 2rem;
+}
+header h1{
+    font-size: 5vmax;
+}
+
+#logo{
+    aspect-ratio: 1/1;
+    height: 80%;
+    scale: 2;
+}
+
+#hamburguer{
+    height: 3vmax;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    position: relative;
+    cursor: pointer;
+}
+.linhas{
+    height: 15%;
+    width: 100%;
+    background: white;
+    border-radius: 2rem;
+    position: relative;
+}
+
+#sidebar{
+    position: absolute;
+    height: 50vmax;
+    width: 25vmax;
+    background: #3047AC;
+    z-index: 2;
+    display: none;
+
+}
+
+@keyframes showsied{
+    from{
+        left: 100%;
+    }
+    to{
+        left: 75%;
+    }
+}
+
+@keyframes closesied{
+    from{
+        left: 75%;
+    }
+    to{
+        left: 100%;
+    }
+}
+
+#perfil,.categorias{
+    width: 100%;
+    height: 5vmax;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 1vmax;
+    gap: 0.5vmax;
+    cursor: pointer;
+    transition: box-shadow 0.2s linear;
+    margin-bottom: 0.5vmax;
+    font-size: 1.2vmax;
+}
+#perfil img{ aspect-ratio: 1 /1; width: 15%; }
+
+#perfil:hover{
+    box-shadow: inset 0 0 0 0.05rem white;
+}
+
+.categorias{margin-bottom: 0; margin-bottom: 0.5rem;}
+.categorias img{ aspect-ratio: 1 /1; width: 10%;}
+.categorias:hover{
+    box-shadow: inset 0 0 0 0.05rem white;
+}
+
+#title-header{
+    text-align: center;
+}
+#title-header p{
+    font-size: 2vmax;
+}
+
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1C285D; 
+}
+
+
+/*Area design modal denúncia*/
+
+#modal-denuncia{
+    background: rgb(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    height: 100%;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#content-modal{
+    height: 30vmax;
+    aspect-ratio: 1.5 / 1;
+    background: #324491;
+    border-radius: 2vmax;
+    padding: 2vmax;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2vmax;
+}
+
+#content-modal h1{
+    font-size:1.6vmax;
+    text-align: center;
+}
+
+#content-modal form{
+    display: flex;
+    flex-direction: column;
+    gap: 2vmax;
+    width: 90%;
+}
+
+#motivoDenuncia{
+    width: 100%;
+    resize: none;
+    outline: none;
+    padding: 1vmax;
+    background: #B7C1ED;
+    font-size: 1.5vmax;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.button{
+    padding: 1vmax;
+    width: 45%;
+    background: #1C285D;
+    color: white;
+    border: none;
+    display: flex;
+    justify-content: center;
+    font-size: 1.2vmax;
+    border-radius: 2vmax;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.button:hover{scale: 1.03;color:#1C285D;background-color: white;}
+
+/*Area ao clicar em um pensamento, pensamento selecionado*/
+#selecionado{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    min-height: 45vmax;
+    margin-top: 6.75vh;
+    padding: 5vmax 8vmax;
+    grid-template-columns: 48% 48%;
+    gap: 8%;
+    color: white;
+}
+#informacoesPostagem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4.5vw;
+    font-size: 1.5vmax;
+    color: black;
+    font-size: 1.55vmax;
+}
+
+.pensamentoSelecionado{
+    height: auto;
+    background: #B7C1ED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 2vmax;
+    font-size: 1.7vmax;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: .5vmax;
+}
+
+.textoImagem{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 1vmax;
+}
+
+.textoImagem img{
+    height: 4vmax;
+    width: 4vmax;
+    cursor: pointer;
+}
+
+#nomeCurso{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5vmax;
+}
+
+#info-usuario img{
+    height: 6.5vmax;
+    width: 6.5vmax;
+}
+
+#btnVoltar{
+    width: 50%;
+    background: #1C285D;
+    padding: 1vmax;
+    border: none;
+    font-size: 1.5vmax;
+    border-radius: 0.5vmax;
+    color: white;
+    cursor: pointer;
+}
+
+@keyframes desaparecer{ from{opacity: 1;} to{opacity: 0;} }
+
+
+/*Area post*/
+.publicacao{
+    display: flex;
+    flex-direction: column;
+    height:30vmax;
+    border: 2px solid rgb(0, 0, 0);
+    gap: 0.4vmax;
+    border-radius: 0.5vmax;
+    transition: 0.3s linear;
+}
+
+.usuario{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    color: black;
+    font-weight: 700;
+    font-size: 1.2vmax;
+    padding-left: .5vmax;
+    padding-top: .5vmax;
+}
+
+.usuario img{
+    width: 10%;
+    aspect-ratio: 1 /1 ;
+    cursor: pointer;
+}
+
+.pensamento{
+    width: 100%;
+    height: 80%;
+    background: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 2vmax;
+    font-size: 1.3vmax;
+}
+
+
+.pensamento2{
+    height: 100%;
+}
+
+.publicacao:hover{scale: 1.05;}
+
+.texto{
+    display: flex;
+    align-items: flex-start;
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    user-select: auto;
+    word-break: break-word;
+}
+
+.estrela,.apaga{
+    width: 10%;
+    aspect-ratio: 1;
+    bottom: 0;
+    cursor: pointer;
+    margin-left: .4vmax;
+    margin-bottom: .4vmax;
+}
+
+.apaga{
+    margin-top: 0.5vmax;
+}
+
+
+@keyframes favoritar{
+    0%,50%,100%{
+        scale: 1;
+    }
+    25%{
+        scale: 1.1;
+    }
+    75%{
+        scale: 1.15;
+    }
+}
+
+
+.classSideIr{
+    animation : showsied .8s ease-in-out forwards;
+}
+
+.classSideVoltar{
+    animation : closesied .8s ease-in-out;
+}
+
+@media screen and (max-width: 768px){
+    header{
+        height: 20vmax;
+    }
+
+    header h1{
+        font-size: 5vmax;
+    }
+
+    #logo{
+        height: 60%;
+    }
+
+    #hamburguer{
+        height: 25%;
+    }
+
+
+    .pensamento{
+        font-size: 1.7vmax;
+        
+    }
+
+    .publicacao{
+        height:35vmax;
+    }
+
+    .usuario{
+        font-size: 2vmax;
+    }
+
+    .usuario img{
+        width:10%
+    }
+
+    .estrela,.apaga{
+        scale: 1.1;
+    }
+
+    #selecionado{
+        grid-template-rows: 48% 48%;
+        grid-template-columns: 100%;
+        width: 100%;
+        min-height: 100vmax;
+        padding: 0vmax 8vmax;
+    }
+    
+    #informacoesPostagem{
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 2vmax;
+        gap: 5vmax;
+    }
+    
+    .textoImagem{
+        width: auto;
+        height: auto;
+        flex-direction: row;
+        font-size: 2vmax;
+        max-block-size: 10vmax;
+    }
+
+    .pensamentoSelecionado{
+        min-height: 50vmax;
+        font-size: 2.3vmax;
+    }
+
+    #btnVoltar{
+        width: 100%;
+        padding: 0vmax;    
+        min-block-size: 7vmax;
+    }
+
+    #content-modal{
+        width: 80%;
+    }
+
+    #sidebar{
+        position: absolute;
+        height: 100vmax;
+        width: 50vw;
+        background: #3047AC;
+        z-index: 2;
+        display: none;
+    
+    }
+    
+    @keyframes showsied{
+        from{
+            left: 100%;
+        }
+        to{
+            left: 50%;
+        }
+    }
+    @keyframes closesied{
+        from{
+            left: 50%;
+        }
+        to{
+            left: 100%;
+        }
+    }
+
+    .classSideVoltar{
+        animation : closesied .8s ease-in-out;
+    }
+
+    #perfil,.categorias{
+        font-size: 2vmax;
+        height: 7.5vmax;
+    }
+}
+
+/* pra que outra media???? so cegueta*/
